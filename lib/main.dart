@@ -14,6 +14,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+
+      /// Sets the `home` property of the app to a widget wrapped with `RepositoryProvider`,
+      /// which provides a repository instance to the widget subtree for dependency injection.
+      /// This is commonly used in Flutter apps with the BLoC pattern to make repositories
+      /// accessible to BLoCs and widgets below in the widget tree.
+      ///
+      ///
       home: RepositoryProvider(
         //not digested
         create: (context) => UserRepository(),

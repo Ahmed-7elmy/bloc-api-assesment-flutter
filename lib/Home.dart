@@ -15,9 +15,12 @@ class Home extends StatelessWidget {
           UserBloc(
               RepositoryProvider.of<UserRepository>(context),
             ) //not digested
+            /// Adds a [LoadUserEvent] to the event queue, triggering the loading of user data.
+            /// This is typically used to initiate the process of fetching user information
+            /// when the relevant part of the application is initialized or needs to refresh user data.
             ..add(const LoadUserEvent()),
       child: Scaffold(
-        appBar: AppBar(title: const Text('the blog app')),
+        appBar: AppBar(title: const Text('the bloc app')),
         body: BlocBuilder<UserBloc, UserState>(
           builder: (context, state) {
             if (state is UserLoadingState) {
@@ -30,7 +33,7 @@ class Home extends StatelessWidget {
                 itemCount: usersList.length,
                 itemBuilder: (_, index) {
                   return Card(
-                    color: const Color.fromARGB(255, 156, 7, 255),
+                    color: const Color.fromARGB(255, 146, 40, 217),
                     elevation: 10,
                     margin: const EdgeInsets.symmetric(
                       vertical: 10,

@@ -8,6 +8,7 @@ class UserRepository {
   String endpoint = "https://jsonplaceholder.typicode.com/posts";
 
   Future<List<UserModel>> getUsers() async {
+    //user model empty then it will be filled with data
     Response response = await get(Uri.parse(endpoint));
 
     if (response.statusCode == 200) {

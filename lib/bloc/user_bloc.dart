@@ -8,7 +8,7 @@ part 'user_event.dart';
 part 'user_state.dart';
 
 class UserBloc extends Bloc<UserEvent, UserState> {
-  final UserRepository _userRepository;
+  final UserRepository _userRepository; // Repository to fetch user data
   UserBloc(this._userRepository) : super(UserLoadingState()) {
     //here inherits from Bloc it is saying that is i will start with this specific state
     on<LoadUserEvent>((event, emit) async {
